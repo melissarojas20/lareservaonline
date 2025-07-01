@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Tienda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menú superior -->
+  <header class="menu-superior">
+    <div class="logo">
+      <a href="#">Mi Tienda</a>
+    </div>
+    <nav class="navegacion">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#" class="carrito-icono">🛒</a>
+    </nav>
+    <div id="carrito-flotante" class="carrito-flotante">
+      <p>Tu carrito está vacío 🛍️</p>
+    </div>
+  </header>
+
+  <!-- Título principal -->
+  <h1 id="inicio" style="text-align:center; padding:20px;">¡BIENVENIDOS A LA RESERVA ONLINE!</h1>
+  <p style="text-align:center;">COMPRAS SEGURAS.</p>
+
+  <!-- Aviso intermitente -->
+  <div class="aviso-intermitente" style="background-color:red; color:white; text-align:center; padding:10px;">
+    🚨 ¡Envio gratis por tiempo limitado! 🚨
+  </div>
+
+  <!-- Galería de productos -->
+  <div id="productos" class="galeria-productos">
+
+    <!-- Producto 1 -->
+    <div class="producto">
+      <div class="galeria-mini">
+        <img src="https://i.postimg.cc/6qcT9n3G/moto1.jpg" onclick="abrirLightbox(this)" alt="Moto 1">
+        <img src="https://i.postimg.cc/VN1sbCJr/moto2.jpg" onclick="abrirLightbox(this)" alt="Moto 2">
+        <img src="https://i.postimg.cc/TYy6XpRf/moto3.jpg" onclick="abrirLightbox(this)" alt="Moto 3">
+      </div>
+      <h2>ropa deportiva con inteligent form</h2>
+      <p>talla unica que se ajusta a cualquier tipo de cuerpo.</p>
+      <p><strong>Precio: $150.000</strong></p>
+      <p class="descuento">¡Si pagas ya, 10% de descuento!</p>
+
+      <form action="https://formsubmit.co/TU_CORREO@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+        <input type="text" name="direccion" placeholder="Dirección de envío" required><br><br>
+        <input type="tel" name="telefono" placeholder="Teléfono" required><br><br>
+        <input type="hidden" name="producto" value="Yamaha R6">
+        <button type="submit">Comprar</button>
+      </form>
+<!-- Botón de pago debajo del producto -->
+<button onclick="document.getElementById('formularioPago').style.display='block'">Pago contra entrega</button>
+
+<!-- Ventana flotante del formulario -->
+<div id="formularioPago" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:#fff; padding:20px; max-width:400px; margin:100px auto; border-radius:10px; position:relative;">
+    <h2>Datos para envío y factura</h2>
+    <form action="https://formsubmit.co/archiecr1999@gmail.com" method="POST">
+      <input type="text" name="Nombre completo" placeholder="Nombre completo" required><br><br>
+      <input type="text" name="Cédula" placeholder="Cédula" required><br><br>
+      <input type="email" name="Correo" placeholder="Correo electrónico" required><br><br>
+      <input type="tel" name="Celular" placeholder="Celular" required><br><br>
+      <textarea name="Dirección" placeholder="Dirección completa" required></textarea><br><br>
+
+      <!-- Campos ocultos de configuración -->
+      <input type="hidden" name="_next" value="https://gracias-tu-pedido.com"> <!-- Página de gracias -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit">Enviar pedido</button>
+      <button type="button" onclick="document.getElementById('formularioPago').style.display='none'" style="margin-left:10px;">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+
+      <br>
+      <a href="https://wa.me/573105453556?text=Hola%2C%20estoy%20interesado%20en%20la%20moto%20que%20vi%20en%20tu%20página" target="_blank">
+        <button class="whatsapp">Escribir por WhatsApp</button>
+      </a>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="producto">
+      <div class="galeria-mini">
+        <img src="https://i.postimg.cc/0NZKdLz3/casco1.jpg" onclick="abrirLightbox(this)" alt="Casco 1">
+        <img src="https://i.postimg.cc/9fgzv1qx/casco2.jpg" onclick="abrirLightbox(this)" alt="Casco 2">
+        <img src="https://i.postimg.cc/nrWzwG8N/casco3.jpg" onclick="abrirLightbox(this)" alt="Casco 3">
+      </div>
+      <h2>Casco de seguridad</h2>
+      <p>Casco integral para motociclistas, resistente y ligero.</p>
+      <p><strong>Precio: $90.000</strong></p>
+      <p class="descuento">¡Si pagas ya, 10% de descuento!</p>
+
+      <form action="https://formsubmit.co/archiecr1999@gmail.com" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+        <input type="text" name="direccion" placeholder="Dirección de envío" required><br><br>
+        <input type="tel" name="telefono" placeholder="Teléfono" required><br><br>
+        <input type="hidden" name="producto" value="Casco de seguridad">
+        <button type="submit">Comprar</button>
+      </form>
+<!-- Botón de pago debajo del producto -->
+<button onclick="document.getElementById('formularioPago').style.display='block'">Pago contra entrega</button>
+
+<!-- Ventana flotante del formulario -->
+<div id="formularioPago" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:#fff; padding:20px; max-width:400px; margin:100px auto; border-radius:10px; position:relative;">
+    <h2>Datos para envío y factura</h2>
+    <form action="https://formsubmit.co/archiecr1999@gmail.com" method="POST">
+      <input type="text" name="Nombre completo" placeholder="Nombre completo" required><br><br>
+      <input type="text" name="Cédula" placeholder="Cédula" required><br><br>
+      <input type="email" name="Correo" placeholder="Correo electrónico" required><br><br>
+      <input type="tel" name="Celular" placeholder="Celular" required><br><br>
+      <textarea name="Dirección" placeholder="Dirección completa" required></textarea><br><br>
+
+      <!-- Campos ocultos de configuración -->
+      <input type="hidden" name="_next" value="https://gracias-tu-pedido.com"> <!-- Página de gracias -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit">Enviar pedido</button>
+      <button type="button" onclick="document.getElementById('formularioPago').style.display='none'" style="margin-left:10px;">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+      <br>
+      <a href="https://wa.me/573105453556?text=Hola%2C%20estoy%20interesado%20en%20el%20casco%20que%20vi%20en%20tu%20página" target="_blank">
+        <button class="whatsapp">Escribir por WhatsApp</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer id="contacto" style="text-align:center; padding:20px;">
+    Contacto: archiecr1999@gmail.com
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="cerrarLightbox()">
+    <button class="prev" onclick="event.stopPropagation(); mostrarAnterior()">⟨</button>
+    <img id="imagenGrande" src="" alt="">
+    <button class="next" onclick="event.stopPropagation(); mostrarSiguiente()">⟩</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const carritoIcono = document.querySelector('.carrito-icono');
+    const carritoFlotante = document.getElementById('carrito-flotante');
+
+    carritoIcono.addEventListener('click', (e) => {
+      e.preventDefault();
+      carritoFlotante.style.display = carritoFlotante.style.display === 'block' ? 'none' : 'block';
+    });
+
+    let imagenes = [];
+    let indiceActual = 0;
+
+    function abrirLightbox(imagen) {
+      const galeria = imagen.parentElement.querySelectorAll("img");
+      imagenes = Array.from(galeria);
+      indiceActual = imagenes.indexOf(imagen);
+      mostrarImagen();
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function cerrarLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    function mostrarImagen() {
+      const imagenGrande = document.getElementById("imagenGrande");
+      imagenGrande.src = imagenes[indiceActual].src;
+    }
+
+    function mostrarAnterior() {
+      indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen();
+    }
+
+    function mostrarSiguiente() {
+      indiceActual = (indiceActual + 1) % imagenes.length;
+      mostrarImagen();
+    }
+  </script>
+
+</body>
+</html>
