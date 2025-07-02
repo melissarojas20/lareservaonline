@@ -11,17 +11,25 @@
   <div class="hero">
     <h1>La Reserva Online</h1>
     <h2>Ropa Deportiva para Mujer con Intelligent Form</h2>
-    <img src="https://i.postimg.cc/k5tNq4t2/ropa-deportiva.jpg" alt="Ropa Deportiva" class="product-image" />
+    <div class="galeria">
+  <img id="principal1" src="https://i.postimg.cc/jdmhfVsH/temp-Imagec4ff-AK.avif.jpg" alt="Producto" class="product-image" />
+
+  <div class="miniaturas">
+    <img src="https://i.postimg.cc/jdmhfVsH/temp-Imagec4ff-AK.avif.jpg" onclick="cambiarImagen('principal1', this)">
+    <img src="https://i.postimg.cc/XYZ/otra-imagen1.jpg" onclick="cambiarImagen('principal1', this)">
+    <img src="https://i.postimg.cc/XYZ/otra-imagen2.jpg" onclick="cambiarImagen('principal1', this)">
   </div>
+</div>
+  
 
   <div class="info">
     <p><strong>PRODUCTO ORIGINAL - ENTREGA GARANTIZADA</strong></p>
-    <p>✅ PAGA 1 LLEVA 2</p>
+    <p>✅ Paga ahora y recibe el 10% de descuento</p>
     <div class="temporizador">
       <span id="horas">00</span><span id="minutos">00</span><span id="segundos">00</span>
     </div>
-    <p class="precio-antiguo">$199.000</p>
-    <p class="precio-nuevo">HOY 2x $150.000</p>
+    <p class="precio-antiguo">antes$199.000</p>
+    <p class="precio-nuevo">HOY  $150.000</p>
   </div>
 
   <div style="text-align: center; margin: 20px;">
@@ -42,6 +50,47 @@
     </div>
   </div>
 
+<!-- SEGUNDO PRODUCTO (cambia 'principal1' por 'principal2') -->
+<div class="hero">
+  <h2>Ropa Deportiva para Mujer con Intelligent Form</h2>
+  <div class="galeria">
+    <img id="principal2" src="https://i.postimg.cc/50zXDGcV/temp-Image-Ve-Puif.avif.jpg" alt="Producto" class="product-image" />
+
+    <div class="miniaturas">
+      <img src="https://i.postimg.cc/50zXDGcV/temp-Image-Ve-Puif.avif.jpg" onclick="cambiarImagen('principal2', this)">
+      <img src="https://i.postimg.cc/50zXDGcV/temp-Image-Ve-Puif.avif.jpg" onclick="cambiarImagen('principal2', this)">
+      <img src="https://i.postimg.cc/52mqRXB3/temp-Imagex-Hc-Gm-G.avif.jpg" onclick="cambiarImagen('principal2', this)">
+    </div>
+  </div>
+</div>
+
+  <div class="info">
+    <p><strong>PRODUCTO ORIGINAL - ENTREGA GARANTIZADA</strong></p>
+    <p>✅ Paga ahora y recibe el 10% de descuento</p>
+    <div class="temporizador">
+      <span id="horas">00</span><span id="minutos">00</span><span id="segundos">00</span>
+    </div>
+    <p class="precio-antiguo">antes$199.000</p>
+    <p class="precio-nuevo">HOY  $150.000</p>
+  </div>
+
+  <div style="text-align: center; margin: 20px;">
+    <button class="boton-compra" onclick="abrirPopup()">🛒 PAGO CONTRA ENTREGA</button>
+    <p class="nota">Recibe el producto y paga al momento de la entrega</p>
+  </div>
+
+  <div class="popup" id="popupFormulario">
+    <div class="popup-content">
+      <span class="cerrar" onclick="cerrarPopup()">✖</span>
+      <h3>Finalizar compra</h3>
+      <input type="text" id="nombre" placeholder="Nombre completo" />
+      <input type="text" id="cedula" placeholder="Cédula" />
+      <input type="text" id="celular" placeholder="Celular" />
+      <input type="email" id="correo" placeholder="Correo electrónico" />
+      <input type="text" id="direccion" placeholder="Dirección completa" />
+      <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

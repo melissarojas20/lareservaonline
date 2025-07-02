@@ -32,3 +32,10 @@ function actualizarTemporizador() {
 }
 
 setInterval(actualizarTemporizador, 1000);
+function cambiarImagen(idImagenPrincipal, miniatura) {
+  const principal = document.getElementById(idImagenPrincipal);
+  principal.src = miniatura.src;
+}
+function cambiarImagen(idImagen, miniatura) {
+  document.getElementById(idImagen).src = miniatura.src;
+}
