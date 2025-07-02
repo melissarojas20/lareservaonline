@@ -117,8 +117,10 @@ h1, h2, h3 {
   color: #ff4444;
 }
 .logo {
-  width: 480px;
+  width: 180px;
   height: auto;
   display: block;
-  margin: 0 auto 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
 }
