@@ -44,13 +44,16 @@
     </div>
   </div>
 
+  <!-- SCRIPT CORRECTO -->
   <script>
     function abrirPopup() {
       document.getElementById("popupFormulario").style.display = "block";
     }
+
     function cerrarPopup() {
       document.getElementById("popupFormulario").style.display = "none";
     }
+
     function enviarPedido() {
       const nombre = document.getElementById("nombre").value;
       const cedula = document.getElementById("cedula").value;
@@ -75,6 +78,7 @@
 
       if (tiempoRestante > 0) tiempoRestante--;
     }
+
     setInterval(actualizarTemporizador, 1000);
   </script>
 
