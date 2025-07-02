@@ -4,129 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Reserva Online - Ropa Deportiva Mujer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: white;
-    }
-    .hero {
-      text-align: center;
-      padding: 30px 20px;
-    }
-    .hero h1 {
-      font-size: 36px;
-      color: yellow;
-    }
-    .hero h2 {
-      font-size: 22px;
-      margin-top: 10px;
-    }
-    .product-image {
-      width: 90%;
-      max-width: 350px;
-      margin: 20px auto;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    }
-    .info {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-    }
-    .info p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-    .precio-antiguo {
-      text-decoration: line-through;
-      color: gray;
-    }
-    .precio-nuevo {
-      color: yellow;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .temporizador {
-      font-size: 20px;
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-    .temporizador span {
-      background: #222;
-      padding: 10px 15px;
-      border-radius: 5px;
-    }
-    .boton-compra {
-      background: yellow;
-      color: black;
-      padding: 15px;
-      margin: 20px auto;
-      display: block;
-      width: 90%;
-      max-width: 300px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    /* ✅ FORMULARIO EMERGENTE ESTILO VISUAL MEJORADO */
-    .popup {
-      display: none;
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 9999;
-    }
-    .popup-content {
-      background: #fff;
-      color: #000;
-      width: 90%;
-      max-width: 400px;
-      margin: 80px auto;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
-      border: 3px solid #ffbf00;
-    }
-    .popup-content h3 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    .popup-content input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    .popup-content button {
-      background: green;
-      color: white;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .cerrar {
-      text-align: center;
-      color: red;
-      cursor: pointer;
-      margin-top: 12px;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -146,36 +24,32 @@
     <p class="precio-nuevo">HOY 2x $150.000</p>
   </div>
 
-  <!-- BOTÓN DE PAGO CONTRA ENTREGA -->
   <div style="text-align: center; margin: 20px;">
     <button class="boton-compra" onclick="abrirPopup()">🛒 PAGO CONTRA ENTREGA</button>
     <p style="color: yellow; font-size: 14px; margin-top: 10px;">Recibe el producto y paga al momento de la entrega</p>
   </div>
 
-  <!-- ✅ FORMULARIO EMERGENTE -->
+  <!-- FORMULARIO EMERGENTE -->
   <div class="popup" id="popupFormulario">
     <div class="popup-content">
-      <h3>📝 Finalizar compra</h3>
+      <h3>Finalizar compra</h3>
       <input type="text" id="nombre" placeholder="Nombre completo" />
       <input type="text" id="cedula" placeholder="Cédula" />
       <input type="text" id="celular" placeholder="Celular" />
       <input type="email" id="correo" placeholder="Correo electrónico" />
       <input type="text" id="direccion" placeholder="Dirección completa" />
-      <button onclick="enviarPedido()">✅ Enviar pedido por WhatsApp</button>
-      <div class="cerrar" onclick="cerrarPopup()">❌ Cancelar</div>
+      <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
+      <div class="cerrar" onclick="cerrarPopup()">Cancelar</div>
     </div>
   </div>
 
-  <!-- SCRIPTS -->
   <script>
     function abrirPopup() {
       document.getElementById("popupFormulario").style.display = "block";
     }
-
     function cerrarPopup() {
       document.getElementById("popupFormulario").style.display = "none";
     }
-
     function enviarPedido() {
       const nombre = document.getElementById("nombre").value;
       const cedula = document.getElementById("cedula").value;
@@ -186,11 +60,8 @@
       const mensaje = Hola, quiero comprar ropa deportiva para mujer con Intelligent Form:%0A%0A👤 *Nombre:* ${nombre}%0A🆔 *Cédula:* ${cedula}%0A📱 *Celular:* ${celular}%0A📧 *Correo:* ${correo}%0A🏠 *Dirección:* ${direccion}%0A💵 *Pago:* Contra entrega;
 
       window.open(https://wa.me/573105453556?text=${mensaje}, '_blank');
-
-      cerrarPopup(); // Cierra el formulario después de enviar
     }
 
-    // TEMPORIZADOR
     let tiempoRestante = 6 * 60 * 60;
     function actualizarTemporizador() {
       const horas = Math.floor(tiempoRestante / 3600);
