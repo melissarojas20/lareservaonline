@@ -1,9 +1,9 @@
-
 body {
-  font-family: sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 .hero, .info {
@@ -11,11 +11,16 @@ body {
   text-align: center;
 }
 
+h1, h2, h3 {
+  color: #ffcc00;
+}
+
 .product-image {
   width: 300px;
   height: auto;
   display: block;
   margin: 0 auto;
+  border-radius: 8px;
 }
 
 .miniaturas {
@@ -27,25 +32,41 @@ body {
 
 .miniaturas img {
   width: 60px;
-  height: auto;
   cursor: pointer;
   border: 2px solid transparent;
-  border-radius: 4px;
-  transition: border 0.3s;
+  border-radius: 6px;
+  transition: border 0.3s, transform 0.2s;
 }
 
 .miniaturas img:hover {
-  border: 2px solid #007bff;
+  border: 2px solid #ffcc00;
+  transform: scale(1.05);
+}
+
+.precio-antiguo {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.precio-nuevo {
+  font-size: 24px;
+  color: #00ff66;
+  font-weight: bold;
 }
 
 .boton-compra {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: #fff;
-  font-size: 16px;
+  padding: 12px 24px;
+  background-color: #ffcc00;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.boton-compra:hover {
+  background-color: #ffaa00;
 }
 
 .popup {
@@ -53,13 +74,14 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
 }
 
 .popup-content {
-  background: white;
+  background: #111;
+  color: #fff;
   padding: 20px;
   border-radius: 10px;
   width: 90%;
@@ -70,19 +92,27 @@ body {
   width: 100%;
   margin: 5px 0;
   padding: 10px;
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 4px;
 }
 
 .popup-content button {
-  background-color: #28a745;
-  color: white;
+  background-color: #00ff66;
+  color: #000;
   border: none;
   padding: 10px;
   width: 100%;
   margin-top: 10px;
   cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
 }
 
 .cerrar {
   float: right;
   cursor: pointer;
+  font-size: 20px;
+  color: #ff4444;
 }
