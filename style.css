@@ -1,81 +1,136 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Reserva Online - Ropa Deportiva Mujer</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: white;
+}
 
-  <div class="hero">
-    <h1>La Reserva Online</h1>
-    <h2>Ropa Deportiva para Mujer con Intelligent Form</h2>
-    <img src="https://via.placeholder.com/350x350?text=Imagen+Producto" alt="Ropa Deportiva" class="product-image" />
-  </div>
+.hero {
+  text-align: center;
+  padding: 30px 20px;
+}
 
-  <div class="info">
-    <p><strong>PRODUCTO ORIGINAL - ENTREGA GARANTIZADA</strong></p>
-    <p>✅ PAGA 1 LLEVA 2</p>
-    <div class="temporizador">
-      <span id="horas">00</span><span id="minutos">00</span><span id="segundos">00</span>
-    </div>
-    <p class="precio-antiguo">$199.000</p>
-    <p class="precio-nuevo">HOY 2x $150.000</p>
-  </div>
+.hero h1 {
+  font-size: 36px;
+  color: yellow;
+}
 
-  <div style="text-align: center; margin: 20px;">
-    <button class="boton-compra" onclick="abrirPopup()">🛒 PAGO CONTRA ENTREGA</button>
-    <p style="color: yellow; font-size: 14px; margin-top: 10px;">Recibe el producto y paga al momento de la entrega</p>
-  </div>
+.hero h2 {
+  font-size: 22px;
+  margin-top: 10px;
+}
 
-  <!-- FORMULARIO EMERGENTE -->
-  <div class="popup" id="popupFormulario">
-    <div class="popup-content">
-      <h3>Finalizar compra</h3>
-      <input type="text" id="nombre" placeholder="Nombre completo" />
-      <input type="text" id="cedula" placeholder="Cédula" />
-      <input type="text" id="celular" placeholder="Celular" />
-      <input type="email" id="correo" placeholder="Correo electrónico" />
-      <input type="text" id="direccion" placeholder="Dirección completa" />
-      <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
-      <div class="cerrar" onclick="cerrarPopup()">Cancelar</div>
-    </div>
-  </div>
+.product-image {
+  width: 90%;
+  max-width: 350px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
 
-  <script>
-    function abrirPopup() {
-      document.getElementById("popupFormulario").style.display = "block";
-    }
-    function cerrarPopup() {
-      document.getElementById("popupFormulario").style.display = "none";
-    }
-    function enviarPedido() {
-      const nombre = document.getElementById("nombre").value;
-      const cedula = document.getElementById("cedula").value;
-      const celular = document.getElementById("celular").value;
-      const correo = document.getElementById("correo").value;
-      const direccion = document.getElementById("direccion").value;
+.info {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+}
 
-      const mensaje = Hola, quiero comprar ropa deportiva para mujer con Intelligent Form:%0A%0A👤 *Nombre:* ${nombre}%0A🆔 *Cédula:* ${cedula}%0A📱 *Celular:* ${celular}%0A📧 *Correo:* ${correo}%0A🏠 *Dirección:* ${direccion}%0A💵 *Pago:* Contra entrega;
+.info p {
+  font-size: 18px;
+  margin: 10px 0;
+}
 
-      window.open(https://wa.me/573105453556?text=${mensaje}, '_blank');
-    }
+.precio-antiguo {
+  text-decoration: line-through;
+  color: gray;
+}
 
-    let tiempoRestante = 6 * 60 * 60;
-    function actualizarTemporizador() {
-      const horas = Math.floor(tiempoRestante / 3600);
-      const minutos = Math.floor((tiempoRestante % 3600) / 60);
-      const segundos = tiempoRestante % 60;
+.precio-nuevo {
+  color: yellow;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-      document.getElementById("horas").textContent = String(horas).padStart(2, "0");
-      document.getElementById("minutos").textContent = String(minutos).padStart(2, "0");
-      document.getElementById("segundos").textContent = String(segundos).padStart(2, "0");
+.temporizador {
+  font-size: 20px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 
-      if (tiempoRestante > 0) tiempoRestante--;
-    }
-    setInterval(actualizarTemporizador, 1000);
-  </script>
+.temporizador span {
+  background: #222;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
 
-</body>
-</html>
+.boton-compra {
+  background: yellow;
+  color: black;
+  padding: 15px;
+  margin: 20px auto;
+  display: block;
+  width: 90%;
+  max-width: 300px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nota {
+  color: yellow;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  color: #000;
+  width: 90%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.popup-content h3 {
+  text-align: center;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content button {
+  background: green;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cerrar {
+  text-align: center;
+  color: red;
+  cursor: pointer;
+  margin-top: 10px;
+}
