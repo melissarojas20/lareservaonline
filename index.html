@@ -11,7 +11,7 @@
   <div class="hero">
     <h1>La Reserva Online</h1>
     <h2>Ropa Deportiva para Mujer con Intelligent Form</h2>
-    <img src="https://via.placeholder.com/350x350?text=Imagen+Producto" alt="Ropa Deportiva" class="product-image" />
+    <img src="https://i.postimg.cc/k5tNq4t2/ropa-deportiva.jpg" alt="Ropa Deportiva" class="product-image" />
   </div>
 
   <div class="info">
@@ -24,15 +24,14 @@
     <p class="precio-nuevo">HOY 2x $150.000</p>
   </div>
 
-  <!-- BOTÓN DE PAGO CONTRA ENTREGA -->
   <div style="text-align: center; margin: 20px;">
     <button class="boton-compra" onclick="abrirPopup()">🛒 PAGO CONTRA ENTREGA</button>
     <p class="nota">Recibe el producto y paga al momento de la entrega</p>
   </div>
 
-  <!-- FORMULARIO EMERGENTE -->
   <div class="popup" id="popupFormulario">
     <div class="popup-content">
+      <span class="cerrar" onclick="cerrarPopup()">✖</span>
       <h3>Finalizar compra</h3>
       <input type="text" id="nombre" placeholder="Nombre completo" />
       <input type="text" id="cedula" placeholder="Cédula" />
@@ -40,47 +39,9 @@
       <input type="email" id="correo" placeholder="Correo electrónico" />
       <input type="text" id="direccion" placeholder="Dirección completa" />
       <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
-      <div class="cerrar" onclick="cerrarPopup()">Cancelar</div>
     </div>
   </div>
 
-  <!-- SCRIPT CORRECTO -->
-  <script>
-    function abrirPopup() {
-      document.getElementById("popupFormulario").style.display = "block";
-    }
-
-    function cerrarPopup() {
-      document.getElementById("popupFormulario").style.display = "none";
-    }
-
-    function enviarPedido() {
-      const nombre = document.getElementById("nombre").value;
-      const cedula = document.getElementById("cedula").value;
-      const celular = document.getElementById("celular").value;
-      const correo = document.getElementById("correo").value;
-      const direccion = document.getElementById("direccion").value;
-
-      const mensaje = Hola, quiero comprar ropa deportiva para mujer con Intelligent Form:%0A%0A👤 *Nombre:* ${nombre}%0A🆔 *Cédula:* ${cedula}%0A📱 *Celular:* ${celular}%0A📧 *Correo:* ${correo}%0A🏠 *Dirección:* ${direccion}%0A💵 *Pago:* Contra entrega;
-
-      window.open(https://wa.me/573105453556?text=${mensaje}, '_blank');
-    }
-
-    let tiempoRestante = 6 * 60 * 60;
-    function actualizarTemporizador() {
-      const horas = Math.floor(tiempoRestante / 3600);
-      const minutos = Math.floor((tiempoRestante % 3600) / 60);
-      const segundos = tiempoRestante % 60;
-
-      document.getElementById("horas").textContent = String(horas).padStart(2, "0");
-      document.getElementById("minutos").textContent = String(minutos).padStart(2, "0");
-      document.getElementById("segundos").textContent = String(segundos).padStart(2, "0");
-
-      if (tiempoRestante > 0) tiempoRestante--;
-    }
-
-    setInterval(actualizarTemporizador, 1000);
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
